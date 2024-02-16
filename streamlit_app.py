@@ -1,9 +1,9 @@
 import streamlit as st
 import numpy as np
-from PIL import Image
+from PIL import Image, ImageFilter
 from keras.models import load_model
 import joblib
-import cv2
+# import cv2
 # from googletrans import Translator
 import pandas as pd
 
@@ -54,7 +54,8 @@ def predict_image(uploaded_file, pre_joint_model, post_joint_model, pre_joint_la
         image = image.resize((50, 50))
         image = image.convert('L')
         image = np.array(image)
-        image = cv2.GaussianBlur(image, (3, 3), 0)
+        # image = cv2.GaussianBlur(image, (3, 3), 0)
+        image = image.filter(ImageFilter.GaussianBlur(radius=3))
         image_array = image / 255.0
         image_array = np.expand_dims(image_array, axis=0)
 
