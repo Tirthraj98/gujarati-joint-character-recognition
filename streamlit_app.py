@@ -35,7 +35,7 @@ def main():
     # Load models
     pre_joint_model, pre_joint_label_decoder = load_model_and_decoder("pre_joint_model_gray_v5.h5",
                                                                        "pre_joint_label_encoder_gray_v5.joblib")
-    post_joint_model, post_joint_label_decoder = load_model_and_decoder("model_and_decoders/post_joint_model_gray_v5.h5",
+    post_joint_model, post_joint_label_decoder = load_model_and_decoder("post_joint_model_gray_v5.h5",
                                                                          "post_joint_label_encoder_gray_v5.joblib")
 
     # Make predictions
