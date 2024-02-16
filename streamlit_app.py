@@ -53,7 +53,7 @@ def predict_image(uploaded_file, pre_joint_model, post_joint_model, pre_joint_la
         image = Image.open(uploaded_file)
         image = image.resize((50, 50))
         image = image.convert('L')
-        image = image.filter(ImageFilter.GaussianBlur(radius=1.5))
+        image = image.filter(ImageFilter.GaussianBlur(radius=0.9))
         image = np.array(image)
         # image = cv2.GaussianBlur(image, (3, 3), 0)
         image_array = image / 255.0
